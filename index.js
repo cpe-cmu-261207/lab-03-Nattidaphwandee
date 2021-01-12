@@ -70,5 +70,10 @@ export const filter = (arr, callback) => {
  */
 export const reduce = (arr, callback, initialValue) => {
   // TODO: implement here
+  let sum = initialValue
+  for(let i=0;i<arr.length;i++){
+    sum = callback(sum,arr[i],i)
+  }
+  return sum;
  }
 
