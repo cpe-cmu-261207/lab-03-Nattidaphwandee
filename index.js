@@ -6,7 +6,7 @@
  */
 export const sum = (a, b) => {
   // TODO: implement here
-
+  return a+b
 }
 
 /**
@@ -19,8 +19,17 @@ export const sum = (a, b) => {
  *    callback function to the elements in the original array
  */
 export const map = (arr, callback) => {
-  // TODO: implement here
+  // TODO: implement 
+  const newArr = []
+  if (Array.isArray(arr)) {
+    for (let i = 0; i < arr.length; i++){
+      newArr.push(callback(arr[i], i, arr))
+    }
+  } else {
+    throw new Error("Not an array")
+  }
 
+    return newArr
 }
 
 /**
@@ -32,7 +41,15 @@ export const map = (arr, callback) => {
  *    makes the callback predicate true
  */
 export const filter = (arr, callback) => {
-  // TODO: implement here
+  const list = []
+  if (Array.isArray(arr)) {
+    for (let i = 0; i < arr.length; i++){
+      if (callback(arr[i], i, arr) === true) {
+        list.push(arr[i])
+      }
+    }
+    return list
+  }
 
 }
 
@@ -53,5 +70,5 @@ export const filter = (arr, callback) => {
  */
 export const reduce = (arr, callback, initialValue) => {
   // TODO: implement here
+ }
 
-}
